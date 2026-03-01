@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    min-width: 360px;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.Typist .Cursor {
+    display: inline-block;
+}
+
+.Typist .Cursor--blinking {
+    opacity: 1;
+    animation: blink 1s linear infinite;
+}
+
+ul {
+    margin-bottom: 0.69rem;
+}
+
+li {
+    margin: 0.25em 0;
+}
+
+ul.dashed {
+    list-style-type: none;
+}
+
+ul.dashed > li:before {
+    content: '\2014';
+    position: absolute;
+    margin-left: -20px;
+}
+
+a {
+    color: inherit;
+}
+
+@media print {
+    body {
+        font-size: 0.8rem;
+    }
+
+    p {
+        margin: 0.5em 0;
+        line-height: 1.5;
+    }
+
+    li {
+        line-height: 1;
+        margin: 0.25em 0;
+    }
+
+    ul {
+        margin-bottom: 0.5em;
+    }
+
+    hr {
+        margin: 0;
+    }
+
+    strong a {
+        text-decoration: none;
+    }
+
+    @page {
+        size: auto;   /* auto is the initial value */
+        /* this affects the margin in the printer settings */
+        margin: 10mm 15mm 10mm 15mm;
+    }
+
+}
